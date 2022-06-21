@@ -104,3 +104,117 @@
     cout << phraseSub
     ```
   - output: ell
+# Working with Numbers
+* You can print out integers and doubles without quotes
+  - ```
+    cout << -40;
+    ```
+  - output: -40
+* You can also print addition, subtraction, division, multiplication, and module opertaion (%) 
+  - ```
+    cout << 5 + 6;
+    ```
+  - output: 11
+  - ```
+    cout << 5 + 4 * 2;
+    ```
+  - output: 13
+* You can do the same (++) or (--) with integer variables
+  - ```
+    int wnum = 5;
+    wnum++;
+    ```
+* it prints out decimal number with a int and double
+  - ```
+    int num1 = 5;
+    double num2 = 1.5;
+    cout << num1 + num2;
+    ```
+  - output: 6.5
+* A function is a collection of code that will perform a specific task
+* To use math functions you have to put "#include <cmath>" at the top of the code
+* pow(int num1, int num2): num1 to the power of num2
+  - ```
+    cout << pow(3, 2);
+    ```
+  - output: 9
+* sqrt(int num): gives square root of num
+  - ```
+    cout << sqrt(9);
+    ```
+  - output: 3
+* round(int num): rounds the num
+  - ```
+    cout << round(4.6);
+    ```
+  - output: 5
+* ceil(int num): rounds up no matter what
+* floor(int num): round down no matter what
+* fmax(int num1, int num2): returns the bigger number
+  - ```
+    cout << fmax(3, 10);
+    ```
+  - output: 10
+* fmin(int num1, int num2): returns smaller number
+# Getting User Input
+* when given information, you need to store it in a variable
+* 
+* ```
+  int age;
+  cout << "Enter your age: ";
+  cin >> age; // user input
+  cout << "You are " << age << " years old";
+  ```
+* Output: Enter your age: ____ [enter] You are ___ years old
+  - the ____ is the user input
+* double, and char works the same
+* Strings work differently
+* ```
+  string name;
+  cout << "Enter your name: "
+  getline(cin, name);  // gets a text from the user
+  cout << "Hello " << name;
+  ```
+* Output: Enter your name: ____ [enter] Hello _____
+# Building a calculator
+* ```
+  #include <iostream>
+  #include <cmath>
+  using namespace std;
+  
+  int main() {
+  double num1, num2; // can stack variables if they are the same data type
+  cout << "Enter first number: ";
+  cin >> num1;
+  cout << "Enter second number: ";
+  cin << num2;
+  cout << num1 + num2;
+  return 0;
+  }
+  ```
+* Output: Enter first number: ____ [enter] Enter second number: ____ [enter] -(numbers added together)-
+# Building a Madlibs game
+* ```
+  #include <iostream>
+  #include <cmath>
+  using namespace std;
+  
+  int main() {
+  string color, pluralNoun, celebrity;
+  cout << "enter a color: "
+  getline(cin, color):
+  cout << "enter a plural noun: ";
+  getline(cin, pluralNoun);
+  cout << "enter a celebrity: ";
+  getline(cin, celebrity); 
+  cout << "Roses are " << color << endl;
+  cout << pluralNoun << " are blue" << endl;
+  cout << "I love " << celebrity << endl;
+  return 0;
+  }
+  ```
+* output: enter a color: _____ [enter] enter a plural noun: ____ [enter] enter a celebrity: _____ [enter] Roses are -color- [newline] -pluralNoun- are blue [newline] I love -celebrity-
+# Arrays
+
+  
+  
