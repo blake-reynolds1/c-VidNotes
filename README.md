@@ -1,4 +1,5 @@
-# Introduction
+# C++ Introduction
+* note: Possibly look up each section to see how it differs with java
 * You need to build and run program to get an output
 * ```
   #include <iostream>
@@ -215,6 +216,151 @@
   ```
 * output: enter a color: _____ [enter] enter a plural noun: ____ [enter] enter a celebrity: _____ [enter] Roses are -color- [newline] -pluralNoun- are blue [newline] I love -celebrity-
 # Arrays
+* declared the same as java
+  - ```
+    int luckyNums[] = {1, 2, 3, 4};
+    luckyNums[1] = 5;
+    cout << luckyNums[1];
+    ```
+  - output: 5
+  - ```
+    int nums[10] = {1, 2, 3};
+    nums[10] = 5;
+    cout << nums[10];
+    ```
+# Functions
+* function is a collection of code that preforms specific tasks, like a method
+  - ```
+    int main() {
+    return 0;
+    }
+    ```
+* void : function does not return anything (no return type)
+  - ```
+    void sayHi() {
+      cout << "Hello";
+    }
+    int main() {
+    cout << "Top";
+    sayHi(); // call function
+    cout << "bottom";
+    return 0;
+    }
+    ```
+  - output: TopHelloBottom
+  - ```
+    void sayHi(string name, int age) {
+      cout << "Hello" << name << "you are " << age << endl;
+    }
+    int main() {
+    sayHi("Bill", 5);
+    sayHi("Mike", 10):
+    return 0;
+    }
+    ```
+    - output: Hello Bill you are 5 [newline] Hello Mike you are 10
+* cannot put a function below the main if the main is calling
+  - ```
+    int main() {
+    sayHi("Bill", 5);
+    return 0;
+    }
+    void sayHi(string name, int age) {
+    cout << "Hello" << name << "you are " << age << endl;
+    }
+    ```
+  - output: ERROR
+* Function stub to make the function work
+  - ```
+    void sayHi(string name, int age);
+  
+    int main() {
+    sayHi("Bill", 5);
+    return 0;
+    }
+    void sayHi(string name, int age) {
+    cout << "Hello" << name << "you are " << age << endl;
+    }
+    ```
+  - output: Hello Bill you are 5
+# Return type
+* return type works the same as java
+  - ```
+    double cube(double num) {
+    double result = num * num * num; // could return num * num * num instead
+    return result: 
+    }
+    int main() {
+    double answer = cube(5.0);
+    cout << answer;
+    ```
+    - output: 125
+# If statements
+* if statements work the same as java
+  - ```
+    bool isMale = true;
+    if (isMale) {
+    cout << "You are a male"; 
+    }
+    else {
+    cout << "You are not male";
+    }
+    ```
+  - output: You are a male
+* && - both have to be true 
+* || - one has to be true 
+  - ```
+    bool isTall = true;
+    bool isMale = true;
+    if(isMale && isTall) { //both have to be true
+    cout << "You are a tall male";
+    } else {
+    cout << "You are not tall or not a man";
+    }
+    ```
+  - output: You are a tall male
+* else if
+  - ```
+    bool isTall = true;
+    bool isMale = false;
+    if(isMale && isTall) { 
+    cout << "You are a tall male";
+    } else if(isMale && !isTall) {
+    cout << "You are a male but not tall";
+    } else if(!isMale && isTall) {
+    cout << "You are tall but not male";
+    } else {
+    cout << "You are not tall and not a man";
+    }
+    ```
+  - output: You are tall but not male
+# More If Statements
+* Using comparisons in if statements
+* Work the same as java
+  - ```
+    int getMax(int num, int num2, int num3) {
+    int result;
+    if (num >= num2 && num >= num3) {
+    result = num;
+    } else if (num2 >= num && num2 >= num3) {
+    result = num2
+    } else {
+    result = num3;
+    }
+    return result;
+    }
+    int main() {
+    int max = getMax(5, 4, 1)
+    cout << max;
+    return 0;
+    }
+    ```
+  - output: 5 
+# Building a better calculator
 
+  
+  
+  
+  
   
   
