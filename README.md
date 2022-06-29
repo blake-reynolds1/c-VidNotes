@@ -357,10 +357,400 @@
     ```
   - output: 5 
 # Building a better calculator
+* ```
+  int main() {
+    int num1, num2;
+    char op;
+    cout << "Enter first number: ";
+    cin >> num1;
+    cout << "Enter operator: ";
+    cin >> op;
+    cout << "Enter second number: ";
+    cin >> num2;
+    int result;
+    if(op == '+') {
+      result = num1 + num2;
+    }
+   else if(op == '-') {
+     result = num1 - num2;
+    }
+   else if(op == '/') {
+      result = num1 / num2;
+   }
+   else if(op == '*') {
+     result = num1 * num2;
+   }
+    else {
+      cout << "Invalid operator";
+    }
+    cout << result;
+  }
+  ```
+- output: Enter first number: -5- [newline] Enter operator: -+- [newline] Enter second number: -2- [newline] 7
+# Switch statement
+* Switch statements are special type of if statements
+* ```
+  string getDayOfWeek(int dayNum) {
+    string dayName;
+    // stopped at case 2 but can go farther
+    switch(dayNum) {
+      case 0: 
+        dayName = "Sunday";
+        break; // stops if case 0 is true
+      case 1:
+        dayName = "Monday";
+        break;
+      case 2:
+        dayName = "Tuesday";
+        break;
+      default: // if no cases are true
+        dayName = "Invalid day number";
+    }
+    return dayName;
+  }
+  int main() {
+    cout << getDayOfWeek(2);
+  }
+  ```
+  - output: Tuesday
+# While loops
+* Works the same as java
+  - ```
+    int index = 1;
+    while(index <= 5) {
+      cout << index;
+      index++;
+    }
+    ```
+  - output: 12345
+* do while loop - like a while reversed. do first then check condititon
+  - ```
+    int index = 6;
+    do {
+      cout << index << endl;
+      index++;
+    } while (index <=5);
+    ```
+  - output: 6
+# Building Guessing game
+* ```
+  int main() {
+   int secretNum = 6;
+   int guess;
+   int guessCount = 0;
+   bool outOfGuesses = false;
+   while (secretNum != guess && !outOfGuesses) {
+    if (guessCount <= 3) {
+     cout << "Enter guess: ";
+     cin >> guess;
+     guessCount++;
+    }
+    else {
+      outOfGuesses = true;
+    }
+   }
+   if (outOfGuesses) {
+    cout << "You lose!"
+   }
+   else {
+   cout << "You Win!";
+   }
+  }
+  ```
+output: Enter guess: -2- [newline] Enter guess: -4- [newline] Enter guess: -6- [newline] You win!
+# For loops
+* Same as java
+  - ```
+    for (int i = 1; i <= 5; i++) {
+      cout << index;
+    }
+    ```
+  - output: 12345
+  - ```
+    int nums[] = {1, 2, 3, 4, 5}
+    for (int i = 0; i < 5; i++) {
+      cout << nums[i];
+    }
+    ```
+  - output: 12345
+# Building an Exponent function
+* ```
+  int power(int base, int pow) {
+    int result = 1;
+    for (int i = 0; i < pow; i++) {
+      result = result * base;
+    }
+    return result;
+  }
+  int main() {
+    cout << power(4, 3);
+  }
+  ```
+  - output: 64
+# 2d Arrays and nested loops
+* 2d array
+  - ```
+    int numGrid[3][2] = {         // 2 columns, 3 rows
+                          {1, 2}, // 1st element
+                          {3, 4}, // 2nd element
+                          {5, 6}  // 3rd element
+                      };
+    cout << numGrid[0][1] << endl;
+    cout << numGrid[2][0];
+    ```
+  - output: 1 [newline] 5
+* nested for loop
+  - ```
+    int numGrid[3][2] = {         
+                          {1, 2}, 
+                          {3, 4}, 
+                          {5, 6}  
+                      };
+    for(int i = 0; i < 3; i++) {
+      for (int x = 0; x < 2; x++) {
+        cout << numGrid[i][x];
+      }
+      cout << endl;
+    }
+    ```
+  - output: 12 [newline] 34 [newline] 56 [newline]
+# Pointers
+* pointer is a type of information that we can work with, basically memory addresses
+* RAM - random access memory
+* pointer uses RAM
+  - ```
+    int age = 19;
+    double gpa = 3.2;
+    string name = "Mike";
+    cout << &age << endl; // print the memory address where age is stored
+    cout << &gpa; << endl;
+    cout << &name;
+    ```
+  - output: 0x6afee0 [newline] 0x6afee0 [newline] 0x6afedc
+  - ```
+    int age = 19;
+    int *ptrAge = &age;  // container where we can store a ptr
+    double gpa = 3.2;
+    double *ptrGpa = &gpa // ptr has to have the same variable
+    string name = "Mike";
+    string *ptrName = &name; 
+    cout << ptrAge;
+    ```
+  - output: 0x6afedc
+* Dereferencing a pointer - grab the value that's inside of the memory address
+  - ```
+    int age = 19;
+    int *ptrAge = &age;
+    cout << *ptrAge; // dereference ptr
+    ```
+  - output: 19
+  - ```
+    double gpa = 3.2;
+    double *ptrGpa = &gpa;
+    cout << *&gpa; // dereference
+    ```
+  - output: 3.2
+# Classes and Object
+* class - blueprint for a new data type 
+* Object - instance of the class
+* ```
+  class Book {  //blueprint
+    public:
+      string title;
+      string author;
+      int pages;
+  };
+  int main() {
+    Book book1; // object
+    book1.title = "Harry Potter"; // attributes
+    book1.author = "J.K. Rowling";
+    book1.pages = 500;
+    Book book2; // object
+    book2.title = "Lord of the Rings"; // attributes
+    book2.author = "Tolkein";
+    book2.pages = 700;
+    cout << book1.title << endl;
+    cout << book2.pages << endl;
+  }
+  ```  
+  - output: Harry Potter [newline] 700
+# Constuctor functions
+* constructor - special function that gets called whenever we create a object of class
+  - ```
+    class Book {  
+     public:
+       string title;
+       string author;
+       int pages;
+       Book() { //constructor
+          cout << "Creating object" << endl;
+       }
+    };
+    int main() {
+      Book book1; // object
+     Book book2; // object
+    }
+    ```
+  - output: Creating object [newline] Creating object
+  - ```
+    class Book {  
+     public:
+        string title;
+        string author;
+        int pages;
+        Book(string name) {
+          cout << name << endl;
+        }
+    };
+    int main() {
+     Book book1("Harry Potter");
+     Book book2("Lord of the Rings");
+    }
+    ```
+  - output: Harry Potter [newline] Lord of the Rings
+  - ```
+    class Book {  
+     public:
+        string title;
+        string author;
+        int pages;
+        Book() {
+          title = "no title";
+          author = 'no author"
+          pages = 0;
+        Book(string aTitle, string aAuthor, int aPages) {
+          title = aTitle;
+          author = aAuthor;
+          pages = aPages;
+        }
+    };
+    int main() {
+     Book book1("Harry Potter", "JK Rowling", 5000);
+     Book book2("Lord of the Rings", "Tolkein", 700);
+     Book book3()
+     cout << book1.title << endl;
+     cout << book3.title;
+    }
+    ```
+  - output: Harry Potter [newline] no title
+# Object Functions
+* Object functions - function that we can put in our classes
+  - ```
+    class Student {
+      public:
+        string name;
+        string major;
+        Student(string aName, string aMajor, double aGpa) {
+          name = aName;
+          major = aMajor;
+          gpa = aGpa;
+        }
+        bool hasHonors() {
+          if (gpa > 3.5) {
+            return true;
+          }
+          else {
+            return false;
+          }
+        }
+    };
+    int main() {
+      Student student1("Jim", "Business", 2,4);
+      Student student2("Pam", "art", 3.6);
+      cout << student1.hasHonors(); // 0 output means false
+      cout << student2.hasHonors(); // 1 output means true
+    }
+  - output: 01
+# Getters and Setters
+* getters and setters - allow you to control the access to the different attributes and elements in classes
+  - ```
+    class Movie {
+      private: // main can't access these variables
+        string rating;
+      public: 
+        string title;
+        string director;
+        Movie(string aTitle, string aDirector, string aRating) {
+          title = aTitle;
+          director = aDirector;
+          setRating(aRating);
+        }
+        void setRating(string aRating) {
+          if (aRating == "G" || aRating == "PG" || aRating == "PG-13" || aRating = "R") {
+            rating = aRating;
+          }
+          else {
+            rating = "NR";
+          }
+        }
+        string getRating() {
+          return rating;          
+    };
+    int main() {
+      Movie avengers("The Avengers", "Joss Whedon", "PG-13");
+      avengers.setRating("Dog"); // if commented out - the output would be PG-13
+      cout << avengers.getRating();
+    }
+    ```
+  - output: NR
+# Inheritance
+* Inheritance - define a class and define other classes and those classes can extend the functionality or inherit all the functionality all the attributes of that original class
+  - ```
+    class Chef {
+      public:
+        void makeChicken() {
+          cout << "The chef makes chicken" << endl;
+        }
+        void makeSalad() {
+          cout << "The chef makes salad" << endl;
+        }
+        void makeSpecialDish() {
+          cout << "The chef makes BBQ ribs" << endl;
+        }
+    };
+    class ItalianChef : public Chef { // the ItalianChef has access to all the functionality of Chef
+    };
+      
+    int main() {
+      Chef chef;
+      chef.makeChicken();
+      ItalianChef italianChef;
+      italianChef.makeChicken();
+    }
+    ```
+  - output: The chef makes chicken [newline] The chef makes chicken
+  - ```
+    class Chef { // super class
+      public:
+        void makeChicken() {
+          cout << "The chef makes chicken" << endl;
+        }
+        void makeSalad() {
+          cout << "The chef makes salad" << endl;
+        }
+        void makeSpecialDish() {
+          cout << "The chef makes BBQ ribs" << endl;
+        }
+    };
+    class ItalianChef : public Chef { // subclass
+      public: 
+       void makePasta() {
+          cout << "The chef makes pasta" << endl;
+       }
+       void makeSpecialDish() { // override 
+          cout << "The chef makes chiken parm" << endl;
+        }
+    };
+      
+    int main() {
+      Chef chef;
+      chef.makesSpecialDish();
+      ItalianChef italianChef;
+      italianChef.makePasta();
+      italianChef.makesSpecialDish();
+    }
+    ```
+  - output: The chef makes BBQ ribs [newline] the chef makes pasta  [newline] the chef makes chicken parm
 
-  
-  
-  
-  
   
   
